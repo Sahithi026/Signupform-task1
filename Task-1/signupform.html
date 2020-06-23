@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Task-1:Signup Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<style>
+
+    body{
+        color:white; 
+        background-image:url(images/bg-intro-desktop.png);
+        background-color:hsl(0 ,100%,74%);
+        padding:0px;
+        margin:0px;
+        font-family:'Poppins',sans-serif;
+    }
+    
+    /*--------------------------
+    Using Flex, 2 columns are arranged horizantally.
+
+    Container holds both columns.
+    ---> First column  - contains text
+    ---> Second column - contains form + blue tab
+
+    ------------------------------*/
+    .container{
+        text-align:center;
+        pADDING:50PX;
+        display:flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items:center;
+    }
+
+    /*first-column properties*/
+    .first-column{
+        text-align:left;
+        box-sizing:border-box;
+        flex:0 0 50%;
+        padding:2%;
+    }   
+
+    .first-column p{
+        font-size:45px;
+        font-weight:900;
+        line-height:1;
+    }
+
+    /*second column width*/
+    .second-column{
+    flex:0 0 40%;
+    }
+
+    /*Setting the background properties for the bluetab*/
+    .bluetab{
+        Background-color: #5d54a3;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0px 5px rgba(0,0,0,0.2);
+    }
+
+    /*Form Outline*/
+    .form{
+        padding:30px;
+        background-color:white;
+        border-radius:10px;
+        box-shadow:0px 5px rgba(0,0,0,0.2);
+        box-sizing:border-box;
+    }
+
+    /*Input field properties*/
+    input{
+        box-sizing:border-box;
+        padding:15px;
+        margin-bottom:15px;
+        width:100%;
+        border-radius:5px;
+        border:1px solid lightgrey;
+        text-indent:10px;
+    }
+    input::placeholder{
+        font-weight:bold;
+        font-family:'Poppins',sans-serif;
+        font-size:12px;
+    }
+
+    /*Submit button styling*/
+    .submit{
+        background-color:#37cc8a;
+        color:white;
+        border:1px solid #3eb37f;
+        box-shadow:0px 2px #3eb37f;
+        cursor:pointer;
+    }
+    .submit:hover{
+        box-shadow:none;
+        transform: translateY(2px);
+    }
+    
+    /*Media queries for responsive design*/
+    @media only screen and (max-width:600px){
+        /*Background-image*/
+        body{
+            background:url(images/bg-intro-mobile.png);
+            background-color:hsl(0 ,100%,74%)
+        }
+        
+        /*----------------------
+
+        When screen is dowmsized(below 600px), 
+        ---> columns stack vertically and occupies total width
+
+        ------------------------*/
+       .container{flex-direction:column;}
+
+        /*text is center-aligned*/
+        .first-column{
+          text-align: center!important;
+           width:100%;
+        }
+       .first-column p{
+          font-size:30px!important;
+        }   
+             
+       .second-column{width:100%;}
+       
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="first-column" >
+            <p>Learn to code by watching others</p>
+            See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
+        </div>
+        <div class="second-column">
+            <p class="bluetab"><strong>Try it free for 7days</strong> then $20/mo. thereafter</p>
+            <div class="form">
+             <form>
+             <input type="text" name="fname" placeholder="First Name" required>  <br>
+             <input type="text" name="lname" placeholder="Last Name" required><br>
+             <input type="email" name="mail" placeholder="Email Address" required><br>
+             <input type="password" name="pwd" placeholder="Password" required><br>
+             <input type="submit" class="submit" value="CLAIM YOUR FREE TRIAL">
+             </form>
+             <p style="color: lightgrey;font-size:12px;">By clicking the button, you are agreeing to our <a style="color:red;  text-decoration: none;" href="#">Terms and Services</a></p>  
+            </div>    
+        </div>
+    </div>
+</body>
+</html>
