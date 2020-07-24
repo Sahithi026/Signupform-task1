@@ -1,0 +1,404 @@
+<!---------------
+Task-2:Huddle Login Page
+Author:Sahithi
+----------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Styles -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins:600' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans:400,700' rel='stylesheet'>
+
+    <!-- Link to access Icons - facebook,instagram,twitter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Icon along the title -->
+    <link rel="icon" href="images/favicon-32x32.png" type="image/icon type">
+    <title>Task-2</title>
+<style>
+    :root{
+        --pink: hsl(322, 100%, 66%);
+        --palecyan: hsl(193, 100%, 96%);
+        --darkcyan: hsl(192, 100%, 9%);
+        --grayishblue: hsl(208, 11%, 55%);
+
+        --poppins: Poppins, sans-serif;
+        --open-sans: 'Open sans', sans-serif;
+    }
+
+    /* Setting font-size to 18px and color as required */
+     body{
+        margin : 0px;
+        padding:0px;
+        box-sizing:border-box;
+        font-size:18px;
+        color:var(--darkcyan);
+        font-family: var(--open-sans);
+    }
+    
+    /* Container with the background */
+    .image-container{
+        background:url(images/bg-hero-desktop.svg) no-repeat, var(--palecyan);
+        padding:2.5em;
+    }
+
+    /* Header - contains logo and "try for free link" */
+    .header{
+      height:2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header a{
+        height:3em;
+        background-color: white;
+        padding:0em 3em;
+        line-height: 3em;
+        border-radius:50px;
+        box-shadow:0px 0px 3px var(--grayishblue),0px 0px 1px var(--palecyan);
+        text-decoration: none;
+        font-family: var(--poppins);
+        font-weight: 600;
+        color: var(--darkcyan);
+        box-sizing: border-box;
+    }
+    .header a:hover{
+        box-shadow: 0px 0px 5px var(--grayishblue);
+    }
+
+    /* Build Community container - flexbox with 2 blocks--one with content and other has image
+    
+    Flex-direction changes to column when screen width is reduced*/
+    .buildcommunity{
+        display:flex;
+        justify-content:space-around;
+        align-items: center;
+        margin:2em 0;
+        padding: 1em;
+        box-sizing: border-box;
+    }
+
+    /* ----------------
+    This block is again a flexbox used to align the heading, content and the link  
+    
+    FirstColumn consists of Big Heading, content, Link
+    */
+    .firstcolumn {
+        flex:0 0 45%;
+        display:flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top:1em ;
+    }
+    #heading--big{
+        font-family: var(--poppins);
+        margin-bottom:-0.25em;
+        font-size:2em;
+    }
+    .firstcolumn a{
+        display:block;
+        background-color:var(--pink);
+        border-radius: 50px;
+        padding:1em 2em ;
+        text-decoration: none;
+        flex:0 0 35%; 
+        color: white;
+        font-weight: 600;
+        margin:30px 0px;
+        text-align: center;
+    }
+    .firstcolumn a:hover{
+        background-color:var(--pink);
+        opacity:0.9;
+        box-shadow:0px 0px 5px var(--grayishblue) ;
+    }
+    
+    /* Second column - contains image */
+    .secondcolumn{
+        flex:0 0 50%;   /* Column width*/
+    }
+    .secondcolumn img{
+        width:100%;     /* Image width*/
+    }
+    /* End of buildcommunity container */
+
+
+
+    /* This container holds all the three boxes and sets the margin for them */
+    .boxes-container{
+        margin:6em 3em 0em 3em;
+        color: var(--grayishblue);
+    }
+    .box-container{ 
+        /* -------
+    flexbox with two boxes-one with content and other image 
+    Every even numbered box will have alternate placement of image
+    */
+        margin:1.5em 0 ;
+        display:flex;
+        justify-content:space-around;
+        align-items: center;
+        padding:1em; 
+        box-shadow:0px 0px 3px var(--palecyan),0px 0px 1px var(--grayishblue);
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+    .box-container:nth-child(even){ 
+        flex-direction: row-reverse;
+    }
+    .box{
+        flex:0 0 45%;
+    }
+    #heading{
+        font-family: var(--poppins);       
+        font-size:1.5em;
+        color:var(--darkcyan)
+    }
+    /* End of boxes container*/
+
+    /* Bottom block with all details */
+    .footer{
+        background-color: var(--darkcyan);
+        margin-top:10em;
+        padding:2em 2.5em;
+        color:white; 
+        display:flex;
+        flex-direction: column;   
+        justify-content: center;
+        align-items: center;  
+    }
+
+    #logo{
+        filter: brightness(0) invert(1);    /*Logo changed to white color*/
+        height:2em;
+        padding: 1em 0;
+        padding-left: 2.5em;
+    }
+
+    /* margin-top is given a negative value in order to get this box in between "boxes-container" and "footer module"*/
+    .middlebox{
+        background-color:white;
+        color:var(--darkcyan);
+        border-radius: 10px;
+        text-align: center;
+        margin: auto;   
+        padding:2em;
+        margin-top:-10em;
+        box-shadow:0px 0px 2px var(--palecyan),0px -2px 0px  var(--palecyan);
+        box-sizing: border-box;
+    }
+    .middlebox a{  
+        background-color:var(--pink) ;
+        border-radius: 50px;
+        padding:1em 4em;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+    }
+    #big-size{
+        font-size:2em;
+        font-family: var(--poppins);
+    }
+
+    /* Details flexbox- with four columns */
+    .details{
+        display:flex;
+        justify-content: space-evenly;
+    }
+    /* First column with slightly arger proportion for the address*/
+    .detail-one{
+        flex:0 0 35%;
+    }
+    /* Other columns with smaller proprtions */
+    .detail-small{
+        flex:0 0 15%;
+    }
+
+    /* Icons from font-awesome */
+    .fa{
+        width:1em;
+        max-height:20px;
+        padding:10px;
+        border:1px solid white;
+        border-radius:50%;
+        color:white;
+        text-decoration: none;
+        text-align: center;
+    }
+    .fa:hover{  /* Inverse Hovering effect*/
+        width:1em;
+        max-height:20px;
+        padding:10px;
+        border:1px solid white;
+        border-radius:50%;
+        color:var(--darkcyan);
+        text-decoration: none;
+        text-align: center;
+        background-color:white;
+    } 
+    
+    /* Address paragraph-made as inline-flex in order prevent text wraping around the icon*/
+    #nowrapicon{
+        display: inline-flex;
+    }
+
+    /* Added padding to the icon for space between icon and text*/
+    .details p img{
+        height:1em;
+        width:1em;
+        padding-right: 1em;
+    } 
+
+    /* Copyright statement at the end of footer-AFTER property*/
+    .footer::after{
+        content:"\00a9 Copyright 2018 Huddle.All rights reserved.";
+        font-size: 0.75em; 
+        display: block;
+        padding:1em;
+        width:100%;
+        text-align:right; 
+    }
+
+    /*Media queries for responsive design*/
+    @media only screen and (max-width:600px) {
+        body{
+            font-size:12px;
+        }
+        .header{
+            font-size: 10px;
+        } 
+        /* Background image is changed to another image with propations suitable to mobile*/
+        .image-container{
+            background:url(images/bg-hero-mobile.svg) no-repeat, var(--palecyan);
+        }
+
+        /*All the flexbox direction change to column upon resize*/
+        .buildcommunity{
+            flex-direction: column;
+        }
+        .firstcolumn{
+            align-items: center;
+            text-align: center;
+        }
+        .firstcolumn a{
+            width:80%;  /* Link width is increased */
+        } 
+        .box-container,.box-container:nth-child(even){
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .boxes-container{
+            margin:2em;
+        }
+        .box img{
+            padding:1em;
+            width:80%;  /* Image width is increased */
+        }
+
+        #big-size{
+            font-size:1.25em;
+        }
+
+        .middlebox{
+            margin-top:-7.5em ;
+        }
+
+        .details{
+            flex-direction: column;
+        }
+        #logo{
+            padding-left:0em;
+        }
+        .detail-one,.detail-small{
+           flex:0 0 100%;
+        }
+
+        .footer::after{
+         text-align:center; /*Center aligned copyrights statement*/
+        }
+    }
+
+
+</style>
+</head>
+<body>
+    <div class="image-container">
+        <div class="header">
+            <img src="images/logo.svg" alt="Logo" style="height: 100%;">
+            <a href="#">Try It Free</a>
+        </div>
+  
+        <div class="buildcommunity">
+            <div class="firstcolumn">
+                <p id="heading--big">Build The Community<br> Your Fans Will Love</p>
+                <p>Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion.</p>
+                <a href="#"> Get Started For Free</a>
+            </div>
+            <div class="secondcolumn">
+                <img src="images/illustration-mockups.svg">
+            </div>
+        </div>
+    </div>
+     
+<div class="boxes-container">
+    <div class="box-container">
+        <div class="box"><p id="heading">Grow Together</p> Generate meaningful discussions with your audience and build a strong, loyal community. Think of the insightful conversations you miss out on with a feedback form.</div>
+        <div class="box"><img src="images/illustration-grow-together.svg" width=100%></div>
+    </div>
+    <div class="box-container"> 
+        <div class="box"><p id="heading"> Flowing Conversations</p> You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading for a more natural flow.</div>
+        <div class="box"><img src="images/illustration-flowing-conversation.svg" width=100%></div>
+        
+
+    </div>
+    <div class="box-container">
+        <div class="box"><p id="heading">Your Users</p> It takes no time at all to integrate Huddle with your app's authentication solution. This means, once signed in to your app, your users can start chatting immediately.</div>
+        <div class="box"><img src="images/illustration-your-users.svg" width=100%></div>
+    </div>
+</div>
+ 
+
+<div class="footer">
+    <div class="middlebox" >
+        <p id="big-size">Ready To Build Your Community?</p>
+        <a href="#">Get Started For Free</a>
+    </div>
+    <div class="footercontent">
+        <img src="images/logo.svg" alt="Logo" id="logo" > 
+                  
+        <div class="details">
+            <div class="detail-one">
+                <p id="nowrapicon">
+                    <img src="images/icon-location.svg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                </p>
+                <p><img src="images/icon-phone.svg">+1-543-123-4567</p>
+                <p><img src="images/icon-email.svg">example@huddle.com</p>
+            </div>
+            
+            <div class="detail-small">
+                <p>About Us</p>
+                <p>What We Do</p>
+                <p>FAQ</p>
+            </div>
+            <div class="detail-small">
+                <p>Career</p>
+                <p>Blog</p>
+                <p>Contact Us</p>
+            </div>
+            <div class="detail-small">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+     </div>    
+    </div>
+</div> 
+
+</body>
+</html>
