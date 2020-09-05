@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" > 
+    <title>IIT Quiz</title>
+</head>
+<body>
+    
+    <div id ="container">
+        <div id="open_page">
+            <h1 class="heading">IIT QUIZ</h1>
+            <p id="heritage_btn" style="text-align:center;">Start <i class="fa fa-arrow-right"></i></p>
+        </div>
+        <div id ="questio22" class="hide">
+            <div id ="score_board">
+            <div id='qn_num' style="display: none;"></div>
+            <div id = "score" style="float:right;">Score : </div>
+            </div>
+            <div id ="ques_ctnr" >
+                <p id = "question">Question</p>
+                <div id="buttons">
+                    
+                    <label for="choice1"  class="btn" >
+                    <input type="radio" id = "choice1" name="radio_check" class="conradio">
+                    <span id = "choice1">Choice1</span>
+                    </label>
+                
+                    <label for="choice2" class="btn" >
+                    <input type="radio" id = "choice2" name="radio_check" class="conradio">
+                    <span id = "choice2">Choice2</span>
+                    </label>
+                    
+                    <label for="choice3" class="btn" >
+                    <input type="radio" id = "choice3" name="radio_check" class="conradio">
+                    <span id = "choice3">Choice3</span>
+                    </label>
+                    
+                    <label for="choice4" class="btn">
+                    <input type="radio" id = "choice4" name="radio_check" class="conradio">
+                    <span id = "choice4">Choice4</span>
+                    </label>
+                </div>    
+            </div>   
+            <div id ="submit_btn" class="nextbtn btn" style="text-align:center;margin-top:0.5em;">Submit</div>
+        </div>
+        <br>
+        <div id="arrow" style="display: none;"><i class="fa fa-angle-double-right" style="float: right;"></i></div>
+        <div id ="result_board" class="hide"> 
+            <br>
+            <div id="result">Final Score : </div>
+                <ol>
+                    <li>Which IIT had support from Federal Republic of Germany during its Establishment?<br><p>IIT MADRAS - The first Indo-German Agreement was signed in 1959 for the establishment of IITM. They provided scientific and technical equipment for the establishment of the Central Workshop and 20 laboratories.</p></li>
+                    
+                    <li>This IIT is the largest in area as well as number of courses offered at the undergraduate level. Which of these is it?<br><p>IIT Kharagpur is the IIT with larest campus occuping an area of 2,100 acres. Nearly 3 times as our Campus-IITM. </p> </li>
+                    
+                    <li>Which of the following IIT is known as IIT Powai?<br><p>IIT Bombay is also known as IIT Powai since it is located near Powai Lake on the outskirts of Bombay.</p></li>
+                    
+                    <li>Which IIT was the first to introduce computer science in the undergraduate curriculum?<br><p>IIT Kanpur is best known for its excellence in imparting Computer Science Education.</p></li>
+                    
+                    <li>Which is the oldest IIT?<br><p>IIT Roorkee was established in 1847 by the East India Company and was known as Roorkee College.Later in 1949, it was elevated to Univeristy of Roorkee. Recently in 2001, it was given IIT status, by passing a bill in Parliament. The next oldest is ITT Kharagpur. It was established in 1951.</p></li>
+                </ol>
+            
+            <button id="restart_btn" class='btn' style="font-size:larger;border-radius: 10px;margin-bottom:1em;">Restart</button> 
+        </div>
+    </div>
+     
+    
+
+    <script src="./app.js"></script>
+</body>
+</html>

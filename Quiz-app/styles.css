@@ -1,0 +1,169 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding:0;
+    font-size: 28px;
+    font-family : 'Poppins', sans-serif;
+    background: url(./black_white_bg.jpg) repeat-x fixed;
+    color:#fffff0;
+    box-sizing: border-box;
+    
+    transition : all 0.5s;
+} 
+
+#container{
+    margin:0em 1.5em;
+    height:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition : 0.5s;
+}
+
+#questio22{
+    width:80%;
+}
+
+#score_board{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:3px dotted;
+    opacity: 0.8;
+}
+
+.testing{
+    width : 30%;
+    transition : 2s;
+}
+
+.transition{
+    transition:all 0.5s;
+}
+#heritage_btn:hover{
+    cursor:pointer;
+}
+
+:root{
+    --green : rgb(0,150,0);
+    --red : rgb(120,0,0);
+}
+
+.hide{
+    display: none;
+}
+
+#arrow{
+    float:right;
+    box-sizing: border-box;
+    width:5%;
+    height:auto;
+    color:#fffff0;
+    font-size:2.25em;
+}
+
+#arrow i{
+    text-align: right;
+}
+
+.hide{
+    display:none;
+}
+
+#buttons{
+    width :100%;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: flex-start;
+} 
+
+.btn:hover{
+    cursor: pointer;
+    background-color: #999;
+}
+
+.btn{
+    width:100%;
+    padding:0.3em 0em;
+}
+
+.correct{
+    background-color: var(--green);
+    transition: background-color 0.5s;
+}
+.conradio{
+    cursor : pointer;
+    appearance: none;
+    position: relative;
+    height:2em;
+    width:2em;
+    background : #cbd1d8;
+    border :none;
+    outline :none;
+
+}
+
+#open_page{
+    font-size: 60px;
+}
+
+.conradio:hover{
+    background: #615c5c;
+}
+
+.conradio:checked::before{
+    height:2em;
+    width:2em;
+    position:relative;
+    content: "✔";
+    /* content:'\2716'; */
+    display: inline-block;
+    font-size:30px;
+    line-height: 30px;
+    color:#1c1c1c;
+}
+
+.wrong{
+    background-color: var(--red);
+    transition: background-color 0.5s;
+}
+#result_board ol li{
+    font-size: 25px;
+    color:#cbd1d8;
+}
+#result_board ol li p{
+    font-size: 20px;
+    color:grey;
+}
+
+#result_board div{
+    text-align:center;
+    font-size: 60px;
+
+}
+
+@media only screen and (max-width:600px){
+    body{
+        font-size:25px;
+    }
+    #container{
+        padding:0% 0%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #questio22{
+        width:90%;
+    }
+    #score_board {
+        font-size:22px;
+    }
+    #result_board div, #open_page{
+        font-size: 50px;
+    }
+    #result_board ol{
+        font-size: 20px;
+    }
+
+}
